@@ -7,7 +7,7 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="dark" />
-      <HomeScreen />
+      <Landing/>
     </SafeAreaView>
   );
 }

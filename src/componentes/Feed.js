@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { FlatList } from "react-native";
 
-import api from "../services/api";
+import api from "../apis/apis";
 import Post from "./Post";
 
 export default function Feed() {
