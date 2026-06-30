@@ -35,5 +35,6 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderBottomWidth: 0.5,
     borderBottomColor: "#ddd",
+    flexGrow: 0,  
   },
 });
