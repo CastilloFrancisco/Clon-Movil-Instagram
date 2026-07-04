@@ -28,12 +28,14 @@ export default function ProfileHeader({ username, avatarUrl, bio, postsCount }) 
         <Text style={styles.bioText}>{bio}</Text>
       </View>
 
-      <TouchableOpacity activeOpacity={0.7} style={styles.editButton}>
-        <Text style={styles.editButtonText}>Editar perfil</Text>
-      </TouchableOpacity>
-      <TouchableOpacity activeOpacity={0.7} style={styles.editButton}>
-        <Text style={styles.editButtonText}>Compartir perfil</Text>
-      </TouchableOpacity>
+      <View style={styles.buttonsRow}>
+        <TouchableOpacity activeOpacity={0.7} style={styles.editButton}>
+          <Text style={styles.editButtonText}>Editar perfil</Text>
+        </TouchableOpacity>
+        <TouchableOpacity activeOpacity={0.7} style={[styles.editButton, styles.editButtonLast]}>
+          <Text style={styles.editButtonText}>Compartir perfil</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }

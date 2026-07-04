@@ -1,20 +1,14 @@
 import api from "./catapi";
 
 const USERNAMES = [
-    "miau_ninja",
-    "pixel_michi",
-    "tomcat_vibes",
-    "neo_whiskers",
-    "gato_cosmico",
-    "purr_fusion",
-    "michi_wave",
-    "astro_kitty",
-    "shadow_paws",
-    "meow_horizon",
-    "lucky_felines",
-    "catzilla_x",
-    "nova_miau",
-    "tiger_whisk"
+    "Bruno",
+    "BRoth",
+    "ChicoDLB",
+    "Creador",
+    "Timbas",
+    "Runner",
+    "Brunubi",
+    "DrRoth"
 ];
 
 const LOCATIONS = [

@@ -4,10 +4,10 @@ import { View, FlatList, ActivityIndicator } from "react-native";
 import Header from "../componentes/Header/Header";
 import Stories from "../componentes/Stories/Stories";
 import Feed from "../componentes/Feed/Feed";
-import BottomBar from "../componentes/BottomBar/BottomBar";
 import { styles } from "./Styles";
+import { catService } from "../apis/structure";
 
-export default function Landing() {
+export default function Landing({ navigation }) {
   const [posts, setPosts] = useState([]);
   const [storyAvatars, setStoryAvatars] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -15,31 +15,9 @@ export default function Landing() {
   useEffect(() => {
     const loadFeed = async () => {
       try {
-        // Replace this with your API call
-        // const data = await catService.getFeedPosts(12);
+        const data = await catService.getFeedPosts(12);
 
-        const data = [
-          {
-            id: "1",
-            userId: "Bruno",
-            avatarUrl: "https://i.pravatar.cc/150?img=12",
-            imageUrl: "https://picsum.photos/600/600?1",
-            caption: "Enjoying the day 🐱",
-            likesCount: 2543,
-            location: "Catland",
-          },
-          {
-            id: "2",
-            userId: "Runner",
-            avatarUrl: "https://i.pravatar.cc/150?img=15",
-            imageUrl: "https://picsum.photos/600/600?2",
-            caption: "Morning run!",
-            likesCount: 1820,
-            location: "Buenos Aires",
-          },
-        ];
-
-        setPosts(data);
+        setPosts(data.slice(0, 4));
         setStoryAvatars(data.map((post) => post.avatarUrl));
       } catch (error) {
         console.log(error);
@@ -69,6 +47,7 @@ export default function Landing() {
             imageUrl={item.imageUrl}
             caption={item.caption}
             initialLikes={item.likesCount}
+            onPressPost={() => navigation.navigate("Post", { id: item.id, imageUrl: item.imageUrl })}
           />
         )}
         ListHeaderComponent={
@@ -78,8 +57,6 @@ export default function Landing() {
           </>
         }
       />
-
-      <BottomBar />
     </View>
   );
 }

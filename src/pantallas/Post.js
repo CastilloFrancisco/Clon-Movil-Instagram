@@ -15,21 +15,31 @@ const STATIC_COMMENTS = [
 export default function Post() {
   const route = useRoute();
   const navigation = useNavigation();
-  const { id } = route.params;
+  const id = route.params?.id;
+  const imageUrlFromRoute = route.params?.imageUrl;
 
   const [liked, setLiked] = useState(false);
   const [likesCount, setLikesCount] = useState(342);
   const [comments, setComments] = useState(STATIC_COMMENTS);
   const [newComment, setNewComment] = useState("");
-  const [imageUrl, setImageUrl] = useState(null);
+  const [imageUrl, setImageUrl] = useState(imageUrlFromRoute || null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (imageUrlFromRoute) {
+      setImageUrl(imageUrlFromRoute);
+      setLoading(false);
+      return;
+    }
+
     if (id) {
       setImageUrl(`https://cdn2.thecatapi.com/images/${id}.jpg`);
       setLoading(false);
+    } else {
+      setImageUrl("https://cdn2.thecatapi.com/images/0.jpg");
+      setLoading(false);
     }
-  }, [id]);
+  }, [id, imageUrlFromRoute]);
 
   const handleLikeToggle = () => {
     if (liked) {

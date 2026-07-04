@@ -7,6 +7,7 @@ import { catService } from "../apis/structure";
 import { styles } from "./Styles";
 
 const { width } = Dimensions.get("window");
+const gridItemSize = Math.min((width - 6) / 3, 118);
 
 const HIGHLIGHTS = [
   { id: "1", title: "Viajes", image: "https://i.pravatar.cc/150?img=20" },
@@ -35,7 +36,7 @@ export default function Profile() {
   }, []);
 
   const renderGridItem = ({ item }) => (
-    <TouchableOpacity activeOpacity={0.9} style={styles.gridItemContainer}>
+    <TouchableOpacity activeOpacity={0.9} style={[styles.gridItemContainer, { width: gridItemSize, height: gridItemSize }]}> 
       <Image source={{ uri: item.imageUrl }} style={styles.gridImage} />
     </TouchableOpacity>
   );
@@ -91,6 +92,8 @@ export default function Profile() {
         numColumns={3}
         ListHeaderComponent={renderHeaderLayout}
         showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.listContent}
+        columnWrapperStyle={styles.columnWrapper}
       />
     </SafeAreaView>
   );

@@ -1,5 +1,7 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, StyleSheet, Dimensions } from "react-native";
 import { Feather } from "@expo/vector-icons";
+
+const { width } = Dimensions.get("window");
 
 export default function Post({ post }) {
 
@@ -29,7 +31,7 @@ export default function Post({ post }) {
 
             <Image
                 source={{ uri: post.image }}
-                style={styles.image}
+                style={[styles.image, { height: Math.min(width * 0.82, 320) }]}
             />
 
             <View style={styles.actions}>
@@ -111,7 +113,8 @@ const styles = StyleSheet.create({
 
     image:{
         width:'100%',
-        height:350
+        resizeMode:'cover',
+        backgroundColor:'#EDEDED'
     },
 
     actions:{

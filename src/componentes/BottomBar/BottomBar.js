@@ -45,7 +45,6 @@ export default function MainTabs() {
             <Search color={color} size={24} strokeWidth={focused ? 2.5 : 2} />
           ),
         }}
-        listeners={{ tabPress: (e) => { e.preventDefault(); } }}
       />
 
       <Tab.Screen
@@ -56,7 +55,6 @@ export default function MainTabs() {
             <Clapperboard color={color} size={24} strokeWidth={focused ? 2.5 : 2} />
           ),
         }}
-        listeners={{ tabPress: (e) => { e.preventDefault(); } }}
       />
 
       <Tab.Screen
@@ -67,7 +65,6 @@ export default function MainTabs() {
             <Send color={color} size={24} strokeWidth={focused ? 2.5 : 2} />
           ),
         }}
-        listeners={{ tabPress: (e) => { e.preventDefault(); } }}
       />
 
       <Tab.Screen

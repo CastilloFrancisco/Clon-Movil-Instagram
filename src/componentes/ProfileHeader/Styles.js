@@ -8,23 +8,26 @@ export const styles = StyleSheet.create({
   },
   topRow: {
     flexDirection: "row",
-    alignItems: "center",
+    alignItems: "flex-start",
     justifyContent: "space-between",
   },
   avatar: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
+    width: 84,
+    height: 84,
+    borderRadius: 42,
     backgroundColor: "#E1E1E1",
   },
   statsContainer: {
     flex: 1,
     flexDirection: "row",
-    justifyContent: "space-around",
-    marginLeft: 16,
+    justifyContent: "space-between",
+    marginLeft: 12,
+    paddingTop: 6,
   },
   statBox: {
+    flex: 1,
     alignItems: "center",
+    paddingHorizontal: 4,
   },
   statNumber: {
     fontSize: 16,
@@ -49,12 +52,20 @@ export const styles = StyleSheet.create({
     color: "#262626",
     marginTop: 4,
   },
-  editButton: {
+  buttonsRow: {
+    flexDirection: "row",
     marginTop: 12,
+  },
+  editButton: {
+    flex: 1,
     paddingVertical: 8,
     borderRadius: 8,
     backgroundColor: "#EFEFEF",
     alignItems: "center",
+    marginRight: 8,
+  },
+  editButtonLast: {
+    marginRight: 0,
   },
   editButtonText: {
     fontSize: 13,
