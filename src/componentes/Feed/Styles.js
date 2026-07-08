@@ -1,11 +1,11 @@
-import { StyleSheet, Dimensions } from "react-native";
-const { width } = Dimensions.get("window");
+import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   cardContainer: {
     backgroundColor: "#FFFFFF",
     marginBottom: 10,
-    width: width,
+    width: "100%",
+    alignSelf: "center",
   },
   userInfoContainer: {
     flexDirection: "row",
@@ -41,8 +41,8 @@ export const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   postImage: {
-    width: width,
-    height: width, 
+    width: "100%",
+    aspectRatio: 1,
     backgroundColor: "#F2F2F2",
   },
   actionsContainer: {
