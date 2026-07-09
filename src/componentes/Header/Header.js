@@ -4,21 +4,14 @@ import { Feather } from "@expo/vector-icons";
 export default function Header() {
   return (
     <View style={styles.container}>
+      <View style={styles.side}>
+        <Feather name="plus" size={26} color="black" />
+      </View>
+
       <Text style={styles.logo}>Instagram</Text>
 
-      <View style={styles.icons}>
-        <Feather
-          name="heart"
-          size={26}
-          color="black"
-          style={styles.icon}
-        />
-
-        <Feather
-          name="send"
-          size={24}
-          color="black"
-        />
+      <View style={styles.side}>
+        <Feather name="heart" size={26} color="black" />
       </View>
     </View>
   );
@@ -27,7 +20,6 @@ export default function Header() {
 const styles = StyleSheet.create({
   container: {
     height: 60,
-    paddingHorizontal: 15,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
@@ -38,17 +30,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
 
+  side: {
+    paddingHorizontal: 10,
+  },
+
   logo: {
-    fontSize: 28,
-    fontWeight: "700",
-  },
-
-  icons: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-
-  icon: {
-    marginRight: 20,
+    fontSize: 30,
+    fontFamily: "Pacifico_400Regular",
   },
 });

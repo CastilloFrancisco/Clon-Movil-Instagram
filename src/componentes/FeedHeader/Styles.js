@@ -10,11 +10,8 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   logoText: {
-    fontSize: 24,
-    fontWeight: "bold",
-    fontStyle: "italic", 
-    fontFamily: "Arial Rounded MT Bold",
-    letterSpacing: -0.5,
+    fontSize: 26,
+    fontFamily: "Pacifico_400Regular",
   },
   iconsContainer: {
     flexDirection: "row",

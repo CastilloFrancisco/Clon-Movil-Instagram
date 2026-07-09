@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Image, StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { House, Search, Clapperboard, Send } from "lucide-react-native";
+import { House, Search, SquarePlay, Send } from "lucide-react-native";
 
 import HomeStack from "./HomeStack";
 import Profile from "../pantallas/Profile";
@@ -48,7 +48,7 @@ export default function MainTabs() {
         component={PlaceholderScreen}
         options={{
           tabBarIcon: ({ color, focused }) => (
-            <Search
+            <SquarePlay
               color={color}
               size={24}
               strokeWidth={focused ? 2.5 : 2}
@@ -67,7 +67,7 @@ export default function MainTabs() {
         component={PlaceholderScreen}
         options={{
           tabBarIcon: ({ color, focused }) => (
-            <Clapperboard
+            <Send
               color={color}
               size={24}
               strokeWidth={focused ? 2.5 : 2}
@@ -86,7 +86,7 @@ export default function MainTabs() {
         component={PlaceholderScreen}
         options={{
           tabBarIcon: ({ color, focused }) => (
-            <Send
+            <Search
               color={color}
               size={24}
               strokeWidth={focused ? 2.5 : 2}

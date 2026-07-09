@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { View, Text, Image, ScrollView, TouchableOpacity, TextInput, ActivityIndicator } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRoute, useNavigation } from "@react-navigation/native";
-import { Heart, MessageCircle, Send, ChevronLeft } from "lucide-react-native";
+import { Heart, MessageCircle, Send } from "lucide-react-native";
 
 import { styles } from "./Styles";
 
@@ -74,9 +74,6 @@ export default function Post() {
     <SafeAreaView style={styles.container} edges={["top", "left", "right"]}>
 
       <View style={styles.headerContainer}>
-        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
-          <ChevronLeft size={28} color="#000000" />
-        </TouchableOpacity>
         <Text style={styles.headerTitle}>Explorar publicaciones</Text>
         <View style={{ width: 28 }} />
       </View>
