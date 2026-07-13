@@ -6,6 +6,7 @@ import {
   Image,
   Text,
 } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import Header from "../componentes/Header/Header";
 import Stories from "../componentes/Stories/Stories";
@@ -66,7 +67,7 @@ export default function Landing({ navigation }) {
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container} edges={["top", "left", "right"]}>
       <FlatList
         data={posts}
         keyExtractor={(item) => item.id.toString()}
@@ -83,6 +84,8 @@ export default function Landing({ navigation }) {
               navigation.navigate("Post", {
                 id: item.id,
                 imageUrl: item.imageUrl,
+                username: item.userId,
+                likesCount: item.likesCount,
               })
             }
           />
@@ -127,6 +130,6 @@ export default function Landing({ navigation }) {
           ) : null
         }
       />
-    </View>
+    </SafeAreaView>
   );
 }

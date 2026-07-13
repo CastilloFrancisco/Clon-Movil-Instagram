@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { View, FlatList, Image, Dimensions, ActivityIndicator, ScrollView, TouchableOpacity, Text } from "react-native";
+import { View, FlatList, Image, useWindowDimensions, ActivityIndicator, ScrollView, TouchableOpacity, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Grid, Bookmark, UserSquare } from "lucide-react-native";
 import ProfileHeader from "../componentes/ProfileHeader/ProfileHeader";
 import { catService } from "../apis/structure";
 import { styles } from "./Styles";
-
-const { width } = Dimensions.get("window");
-const gridItemSize = Math.min((width - 6) / 3, 118);
 
 const HIGHLIGHTS = [
   { id: "1", title: "Viajes", image: "https://i.pravatar.cc/150?img=20" },
@@ -17,6 +14,8 @@ const HIGHLIGHTS = [
 ];
 
 export default function Profile() {
+  const { width } = useWindowDimensions();
+  const gridItemSize = (width - 6) / 3;
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("grid");

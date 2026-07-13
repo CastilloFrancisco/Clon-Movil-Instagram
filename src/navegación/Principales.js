@@ -1,6 +1,7 @@
 import React from "react";
-import { View, Image, StyleSheet } from "react-native";
+import { View, Image, StyleSheet, Platform } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { House, Search, SquarePlay, Send } from "lucide-react-native";
 
 import HomeStack from "./HomeStack";
@@ -13,17 +14,21 @@ const PlaceholderScreen = () => (
 );
 
 export default function MainTabs() {
+  const insets = useSafeAreaInsets();
+  const bottomInset = Math.max(insets.bottom, Platform.OS === "android" ? 10 : 4);
+
   return (
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
         tabBarStyle: {
-          height: 54,
+          height: 54 + bottomInset,
+          paddingBottom: bottomInset,
+          paddingTop: 8,
           backgroundColor: "#FFFFFF",
           borderTopWidth: 0.5,
           borderTopColor: "#DBDBDB",
-          paddingBottom: 4,
         },
         tabBarActiveTintColor: "#000000",
         tabBarInactiveTintColor: "#000000",

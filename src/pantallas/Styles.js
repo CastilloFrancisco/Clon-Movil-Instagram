@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
   },
   listContent: {
-    paddingBottom: 24,
+    paddingBottom: 16,
     backgroundColor: "#FFFFFF",
   },
   columnWrapper: {
@@ -176,6 +176,16 @@ export const styles = StyleSheet.create({
     borderTopWidth: 0.5,
     borderTopColor: "#DBDBDB",
     backgroundColor: "#FFFFFF",
+  },
+  iconRow: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  iconLabel: {
+    marginLeft: 6,
+    fontSize: 13,
+    color: "#262626",
+    fontWeight: "600",
   },
   textInput: {
     flex: 1,
